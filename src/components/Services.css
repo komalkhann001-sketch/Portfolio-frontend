@@ -84,8 +84,14 @@
 .read-more:hover {
   text-decoration: underline;
 }
+@media screen and (max-width: 992px) {
+  .services-grid {
+    gap: 1.5rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .service-card {
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 1.5rem;
   }
 }

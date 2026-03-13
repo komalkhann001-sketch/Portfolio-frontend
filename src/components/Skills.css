@@ -36,7 +36,7 @@
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
@@ -120,8 +120,12 @@
   margin-top: 2rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
   .skills-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .skill-card {
+    padding: 1.2rem;
   }
 }

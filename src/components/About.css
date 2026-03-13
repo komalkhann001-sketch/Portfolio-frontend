@@ -85,16 +85,23 @@
   .about-grid {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 3rem;
   }
   
   .about-image {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
   
   .personal-details {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     text-align: left;
-    max-width: 400px;
-    margin: 0 auto 2rem;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .personal-details {
+    grid-template-columns: 1fr;
   }
 }

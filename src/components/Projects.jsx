@@ -6,10 +6,9 @@ import './Projects.css';
 
 // Import project images
 import ecommerceImg from '../assets/projects/ecommerce.png';
-import figmaFoodImg from '../assets/projects/figma_food.png';
-import figmaDashImg from '../assets/projects/figma_dashboard.png';
+import taskManagerImg from '../assets/projects/task_manager.png';
+import blogImg from '../assets/projects/blog.png';
 import healthPortalImg from '../assets/projects/health_portal.png';
-import { FaFigma } from 'react-icons/fa';
 
 const Projects = () => {
   const projectsList = [
@@ -23,24 +22,22 @@ const Projects = () => {
       github: '#'
     },
     {
-      title: 'Foodie Express UI',
-      category: 'Figma Design',
-      description: 'Modern mobile app UI/UX design for food delivery with vibrant aesthetics.',
-      tags: ['Figma', 'UI/UX', 'Mobile'],
-      img: figmaFoodImg,
+      title: 'Smart Task Manager',
+      category: 'Frontend Development',
+      description: 'AI-powered task management with drag-and-drop and team collaboration.',
+      tags: ['React', 'Framer Motion', 'Firebase'],
+      img: taskManagerImg,
       demo: '#',
-      github: '#',
-      icon: <FaFigma />
+      github: '#'
     },
     {
-      title: 'Crypto Pulse Dashboard',
-      category: 'UI/UX Specialization',
-      description: 'Advanced financial dashboard design with cyberpunk glassmorphic elements.',
-      tags: ['Figma', 'Prototyping', 'Modern UI'],
-      img: figmaDashImg,
+      title: 'Creative Studio Blog',
+      category: 'UI/UX Design',
+      description: 'A visually immersive blog for designers with smooth page transitions.',
+      tags: ['Next.js', 'Tailwind', 'Sanity'],
+      img: blogImg,
       demo: '#',
-      github: '#',
-      icon: <FaFigma />
+      github: '#'
     },
     {
       title: 'Healthy Living Portal',
@@ -129,14 +126,11 @@ const Projects = () => {
               </div>
 
               <div className="project-info">
-                <div className="project-header">
-                  <h3>{project.title}</h3>
-                  {project.icon && <span className="category-icon">{project.icon}</span>}
-                </div>
+                <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <div className="tag-cloud">
                   {project.tags.map((tag, idx) => (
-                    <span key={idx} className="project-chip">{tag}</span>
+                    <span key={idx} className="project-tag">#{tag}</span>
                   ))}
                 </div>
               </div>

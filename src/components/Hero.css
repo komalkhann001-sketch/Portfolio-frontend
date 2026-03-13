@@ -28,7 +28,7 @@
 }
 
 .hero-content h1 {
-  font-size: 4.5rem;
+  font-size: clamp(3rem, 10vw, 4.5rem);
   margin-bottom: 1rem;
   line-height: 1.1;
   letter-spacing: -2px;
@@ -136,31 +136,49 @@
 }
 
 @media screen and (max-width: 992px) {
+  .hero-section {
+    padding-top: 120px;
+    padding-bottom: 60px;
+  }
+
   .hero-container {
     flex-direction: column-reverse;
     text-align: center;
+    gap: 3.5rem;
   }
   
   .hero-content p {
-    margin: 0 auto 2rem;
+    margin: 0 auto 2.5rem;
   }
   
   .hero-btns {
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   .image-circle {
-    width: 250px;
-    height: 250px;
+    width: 280px;
+    height: 280px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: clamp(2.5rem, 10vw, 3.5rem);
   }
   
   .typing-text {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
+    height: 50px;
+  }
+
+  .image-circle {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 300px;
   }
 }
