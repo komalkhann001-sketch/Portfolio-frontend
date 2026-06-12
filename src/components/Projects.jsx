@@ -9,45 +9,51 @@ import ecommerceImg from '../assets/projects/ecommerce.png';
 import taskManagerImg from '../assets/projects/task_manager.png';
 import blogImg from '../assets/projects/blog.png';
 import healthPortalImg from '../assets/projects/health_portal.png';
+import dashboardImg from '../assets/projects/figma_dashboard.png';
+import lumiereImg from '../assets/projects/lumiere_skincare.png';
+import saasKitImg from '../assets/projects/saas_kit.png';
+import caresyncImg from '../assets/projects/caresync_dashboard.png';
+import mernBoilerplateImg from '../assets/projects/mern_boilerplate.png';
 
 const Projects = () => {
   const projectsList = [
     {
-      title: 'Global E-Commerce',
+      title: 'Lumiere Skincare Website',
+      category: 'E-Commerce / Full Stack',
+      description: 'A premium, elegant e-commerce experience for a skincare brand, featuring custom product showcases and an administrative backend dashboard.',
+      tags: ['React', 'Vanilla CSS', 'Node.js', 'MongoDB'],
+      img: lumiereImg,
+      demo: 'https://final-project-website-two.vercel.app/',
+      github: '#'
+    },
+    {
+      title: 'CareSync — Smart Clinic System',
       category: 'MERN Stack',
-      description: 'A full-scale online marketplace with real-time payments and inventory.',
-      tags: ['React', 'Node', 'MongoDB'],
-      img: ecommerceImg,
-      demo: '#',
+      description: 'A comprehensive healthcare clinic management system with digital appointments, prescription workflows, and secure patient histories.',
+      tags: ['React', 'Node.js', 'MongoDB', 'Express'],
+      img: caresyncImg,
+      demo: 'https://care-sync-frontend.vercel.app/dashboard',
       github: '#'
     },
     {
-      title: 'Smart Task Manager',
-      category: 'Frontend Development',
-      description: 'AI-powered task management with drag-and-drop and team collaboration.',
-      tags: ['React', 'Framer Motion', 'Firebase'],
-      img: taskManagerImg,
-      demo: '#',
+      title: 'Multi-Tenant SaaS Platform',
+      category: 'SaaS / Cloud App',
+      description: 'A fully live production-ready SaaS application featuring Stripe billing integration, multi-tenant architecture, and secure JWT authorization.',
+      tags: ['React', 'Stripe API', 'JWT', 'Node.js'],
+      img: saasKitImg,
+      demo: 'https://saas-starter-kit-frontend.vercel.app/',
       github: '#'
     },
     {
-      title: 'Creative Studio Blog',
-      category: 'UI/UX Design',
-      description: 'A visually immersive blog for designers with smooth page transitions.',
-      tags: ['Next.js', 'Tailwind', 'Sanity'],
-      img: blogImg,
-      demo: '#',
+      title: 'MERN Production Boilerplate',
+      category: 'Developer Tools',
+      description: 'A production-grade React & Node starter template sold on Payhip, pre-configured to save developers weeks of setup time.',
+      tags: ['React', 'Node.js', 'Express', 'Payhip Store'],
+      img: mernBoilerplateImg,
+      demo: 'https://mern-boilerplate-chi.vercel.app/',
       github: '#'
     },
-    {
-      title: 'Healthy Living Portal',
-      category: 'Landing Page',
-      description: 'A high-conversion landing page for wellness brands with parallax effects.',
-      tags: ['HTML', 'CSS', 'JavaScript'],
-      img: healthPortalImg,
-      demo: '#',
-      github: '#'
-    }
+
   ];
 
   const containerVariants = {
@@ -108,6 +114,8 @@ const Projects = () => {
                   <div className="overlay-links">
                     <motion.a 
                       href={project.github} 
+                      target={project.github === '#' ? '_self' : '_blank'}
+                      rel="noopener noreferrer"
                       whileHover={{ scale: 1.2, rotate: 10 }}
                       whileTap={{ scale: 0.9 }}
                     >
@@ -115,6 +123,8 @@ const Projects = () => {
                     </motion.a>
                     <motion.a 
                       href={project.demo} 
+                      target={project.demo === '#' ? '_self' : '_blank'}
+                      rel="noopener noreferrer"
                       whileHover={{ scale: 1.2, rotate: -10 }}
                       whileTap={{ scale: 0.9 }}
                     >
@@ -132,6 +142,28 @@ const Projects = () => {
                   {project.tags.map((tag, idx) => (
                     <span key={idx} className="project-tag">#{tag}</span>
                   ))}
+                </div>
+                
+                {/* Mobile action links */}
+                <div className="project-actions-mobile">
+                  {project.github !== '#' && (
+                    <a 
+                      href={project.github} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="action-btn-mobile github-btn"
+                    >
+                      <FaGithub /> GitHub
+                    </a>
+                  )}
+                  <a 
+                    href={project.demo} 
+                    target={project.demo === '#' ? '_self' : '_blank'} 
+                    rel="noopener noreferrer" 
+                    className="action-btn-mobile demo-btn"
+                  >
+                    <FaExternalLinkAlt /> Live Demo
+                  </a>
                 </div>
               </div>
             </motion.div>
